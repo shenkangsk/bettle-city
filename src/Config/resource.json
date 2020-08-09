@@ -1,0 +1,9 @@
+{
+  "images": {
+    "general": {
+      "filename": "General-Sprites.png",
+      "width": "400",
+      "height": "256"
+    }
+  }
+}

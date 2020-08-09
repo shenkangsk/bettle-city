@@ -1,5 +1,5 @@
-import React from 'react';
+import Game from "./Game";
 
-import App from './App';
+const game = new Game();
 
-React.renderDOM(App);
+game.start();

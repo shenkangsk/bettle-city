@@ -8,6 +8,8 @@ module.exports = {
     path: path.join(__dirname, '../dist'),
   },
 
+  devtool: 'source-map',
+
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.*'],
     alias: {
@@ -19,10 +21,17 @@ module.exports = {
     rules: [
       {
         test: /\.t(s|sx)$/,
-        use: 'ts-loader',
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
-        test: /\.s(c|a)ss'/,
+        test: /\.s(c|a)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
@@ -34,7 +43,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|wav)/,
+        test: /\.(svg|wav)$/,
         use: [
           {
             loader: 'file-loader',
